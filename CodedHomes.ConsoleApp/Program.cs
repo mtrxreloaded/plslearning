@@ -18,6 +18,10 @@ namespace CodedHomes.ConsoleApp
 
             Console.WriteLine("Done");
             Console.ReadLine();
+
+            //ApplicationUnit unit = new ApplicationUnit();
+
+            //unit.Users.
         }
     }
 }
