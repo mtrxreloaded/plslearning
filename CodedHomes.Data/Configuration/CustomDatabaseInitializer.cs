@@ -11,7 +11,8 @@ using System.Data.Entity;
 namespace CodedHomes.Data.Configuration
 {
     public class CustomDatabaseInitializer : 
-        CreateDatabaseIfNotExists<DataContext>
+        DropCreateDatabaseIfModelChanges<DataContext>
+        //CreateDatabaseIfNotExists<DataContext>
     {
         protected override void Seed(DataContext context)
         {

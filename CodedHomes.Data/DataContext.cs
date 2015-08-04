@@ -38,7 +38,11 @@ namespace CodedHomes.Data
         {
             modelBuilder.Configurations.Add(new HomeConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
-            //base.OnModelCreating(modelBuilder);
+            
+            // Add ASP.NET WebPages Simple Security tables
+            modelBuilder.Configurations.Add(new RoleConfiguration());
+            modelBuilder.Configurations.Add(new OAuthMembershipConfiguration());
+            modelBuilder.Configurations.Add(new MembershipConfiguration());            
         }
 
         private void ApplyRules()
