@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title :: CodedHomes</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/site")
+        @Scripts.Render("~/bundles/modernizr")
+        
+        @RenderSection("styles", required: false)
+    </head>
+    <body>
+        <div class="container-fluid">
+            <header>
+                <div class="row-fluid">
+
+                    <div class="span6"><a href="/"><img alt="CodedHomes" title="CodedHomes" src="/img/coded-homes-logo.png" /></a></div>
+                    <div class="span6">
+                        <div class="pull-right online standout">
+                            @if (ViewBag.IncludeManifest != null)
+                            {
+                                @Html.ActionLink("Manage Account", "manage", "account")
+                            }
+                            else
+                            {
+                                @Html.Partial("_LoginPartial")
+                            }
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <article>
+                @RenderBody()
+            </article>
+            <footer>
+                    <small>&copy; @DateTime.Now.Year CodedHomes</small>
+            </footer>
+        </div>
+
+        @RenderSection("breakout", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/site")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
