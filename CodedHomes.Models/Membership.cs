@@ -13,7 +13,7 @@ namespace CodedHomes.Models
         public string ConfirmationToken { get; set; }
         public bool? IsConfirmed { get; set; }
         public DateTime? LastPasswordFailureDate { get; set; }
-        public int PasswordFailureSinceLastSuccess { get; set; }
+        public int PasswordFailuresSinceLastSuccess { get; set; }
         public string Password { get; set; }
         public DateTime? PasswordChangedDate { get; set; }
         public string PasswordSalt { get; set; }

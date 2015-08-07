@@ -9,12 +9,27 @@ namespace CodedHomes.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/site").Include(
-                  "~/Scripts/lib/jquery-{version}.js"
-                , "~/Scripts/lib/bootstrap.js"
-                , "~/Scripts/lib/knockout-{version}.js"
-                , "~/Scripts/lib/underscroe.js"
-                , "~/Scripts/lib/H5F.js"
+                        "~/Scripts/lib/jquery-{version}.js"
+                        , "~/Scripts/lib/bootstrap.js"
+                        , "~/Scripts/lib/knockout-{version}.js"
+                        , "~/Scripts/lib/underscore.js"
+                        , "~/Scripts/lib/H5F.js"
+                        , "~/Scripts/app/homesDataService.js"
+                        , "~/Scripts/app/offlineUtility.js"
+                        , "~/Scripts/app/validationUtility.js"
+                        , "~/Scripts/app/serializer.js"
+                        , "~/Scripts/app/_mixins.js"
+                        ));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/bootstrap.css",
+                
+                "~/Content/site.css"
                 ));
+
+            // Stock template bundles
+            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+                        "~/Scripts/lib/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/lib/jquery-{version}.js"));
@@ -25,16 +40,6 @@ namespace CodedHomes.Web
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/lib/jquery.unobtrusive*",
                         "~/Scripts/lib/jquery.validate*"));
-
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/lib/modernizr-*"));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/Content/site").Include("~/Content/bootstrap.css"                
-                ));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
